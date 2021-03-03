@@ -1,4 +1,4 @@
-name: ghcr tag
+name: ghcr package
 
 # Controls when the action will run.
 on:
