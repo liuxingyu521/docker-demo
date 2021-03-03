@@ -1,9 +1,10 @@
 name: CI to Docker Hub
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   push:
-    branches: [ master ]
+    tags:
+      - "v*.*.*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,8 +18,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    
-      - name: Check Out Repo 
+
+      - name: Check Out Repo
         uses: actions/checkout@v2
 
       - name: Login to Docker Hub
@@ -42,4 +43,3 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-      
