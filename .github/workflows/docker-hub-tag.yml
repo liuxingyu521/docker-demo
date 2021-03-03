@@ -1,4 +1,4 @@
-name: Docker Hub tagged
+name: ghcr tag
 
 # Controls when the action will run.
 on:
